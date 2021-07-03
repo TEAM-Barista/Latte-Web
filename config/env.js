@@ -107,11 +107,11 @@ function getClientEnvironment(publicUrl) {
     },
     target: {
       image: path.resolve(__dirname, '../src/assets/sprites/sprite.png'),
-      css: path.resolve(__dirname, '../src/styles/sprite.scss')
+      css: path.resolve(__dirname, '../src/scss/utils/_sprite.scss')
     },
     apiOptions: {
       cssImageRef: "~sprite.png"
-    },
+    }
   };
   
   return { raw, stringified, configSprite };
