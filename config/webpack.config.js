@@ -167,6 +167,7 @@ module.exports = function (webpackEnv) {
     }
     return loaders;
   };
+  watch: true
 
   return {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',

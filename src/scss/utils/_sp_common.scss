@@ -1,3 +1,4 @@
+
 // SCSS variables are information about icon's compiled state, stored under its original file name
 //
 // .icon-home {
@@ -9,33 +10,34 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
-$ico-header-logo-name: 'ico_header_logo';
-$ico-header-logo-x: 0px;
-$ico-header-logo-y: 0px;
-$ico-header-logo-offset-x: 0px;
-$ico-header-logo-offset-y: 0px;
-$ico-header-logo-width: 60px;
-$ico-header-logo-height: 60px;
-$ico-header-logo-total-width: 92px;
-$ico-header-logo-total-height: 60px;
-$ico-header-logo-image: '~sprite.png';
-$ico-header-logo: (0px, 0px, 0px, 0px, 60px, 60px, 92px, 60px, '~sprite.png', 'ico_header_logo', );
-$ico-header-search-name: 'ico_header_search';
-$ico-header-search-x: 60px;
-$ico-header-search-y: 0px;
-$ico-header-search-offset-x: -60px;
-$ico-header-search-offset-y: 0px;
-$ico-header-search-width: 32px;
-$ico-header-search-height: 32px;
-$ico-header-search-total-width: 92px;
-$ico-header-search-total-height: 60px;
-$ico-header-search-image: '~sprite.png';
-$ico-header-search: (60px, 0px, -60px, 0px, 32px, 32px, 92px, 60px, '~sprite.png', 'ico_header_search', );
-$spritesheet-width: 92px;
-$spritesheet-height: 60px;
-$spritesheet-image: '~sprite.png';
-$spritesheet-sprites: ($ico-header-logo, $ico-header-search, );
-$spritesheet: (92px, 60px, '~sprite.png', $spritesheet-sprites, );
+$ico_header_logo-name: 'ico_header_logo';
+$ico_header_logo-x: 0px;
+$ico_header_logo-y: 0px;
+$ico_header_logo-offset-x: 0px/2;
+$ico_header_logo-offset-y: 0px/2;
+$ico_header_logo-width: 120px/2;
+$ico_header_logo-height: 120px/2;
+$ico_header_logo-total-width: 184px/2;
+$ico_header_logo-total-height: 120px/2;
+$ico_header_logo-image: '~sp_common.png';
+$ico_header_logo: (0px/2, 0px/2, 0px/2, 0px/2, 120px/2, 120px/2, 184px/2, 120px/2, '~sp_common.png', 'ico_header_logo', );
+$ico_header_search-name: 'ico_header_search';
+$ico_header_search-x: 120px;
+$ico_header_search-y: 0px;
+$ico_header_search-offset-x: -120px/2;
+$ico_header_search-offset-y: 0px/2;
+$ico_header_search-width: 64px/2;
+$ico_header_search-height: 64px/2;
+$ico_header_search-total-width: 184px/2;
+$ico_header_search-total-height: 120px/2;
+$ico_header_search-image: '~sp_common.png';
+$ico_header_search: (120px/2, 0px/2, -120px/2, 0px/2, 64px/2, 64px/2, 184px/2, 120px/2, '~sp_common.png', 'ico_header_search', );
+$spritesheet-width: 184px/2;
+$spritesheet-height: 120px/2;
+$spritesheet-image: '~sp_common.png';
+$spritesheet-sprites: ($ico_header_logo, $ico_header_search, );
+$spritesheet: (184px/2, 120px/2, '~sp_common.png', $spritesheet-sprites, );
+
 
 // The provided mixins are intended to be used with the array-like variables
 //
@@ -61,6 +63,7 @@ $spritesheet: (92px, 60px, '~sprite.png', $spritesheet-sprites, );
 //
 // // HTML
 // <i class="icon icon-home"></i>
+
 @mixin sprite-width($sprite) {
   width: nth($sprite, 5);
 }
@@ -80,17 +83,24 @@ $spritesheet: (92px, 60px, '~sprite.png', $spritesheet-sprites, );
   background-image: url(#{$sprite-image});
 }
 
+@mixin sprite-size($sprite) {
+    background-size: $spritesheet-width $spritesheet-height;
+}  
+
 @mixin sprite($sprite) {
   @include sprite-image($sprite);
+  @include sprite-size($sprite);
   @include sprite-position($sprite);
   @include sprite-width($sprite);
   @include sprite-height($sprite);
 }
 
+
 // The `sprites` mixin generates identical output to the CSS template
 //   but can be overridden inside of SCSS
 //
 // @include sprites($spritesheet-sprites);
+
 @mixin sprites($sprites) {
   @each $sprite in $sprites {
     $sprite-name: nth($sprite, 10);

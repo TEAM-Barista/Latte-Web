@@ -102,15 +102,18 @@ function getClientEnvironment(publicUrl) {
 
   const configSprite = {
     src: {
-      cwd: path.resolve(__dirname, '../src/assets/ico'),
+      cwd: path.resolve(__dirname, '../src/sprite/sp_common'),
       glob: '*.png'
     },
     target: {
-      image: path.resolve(__dirname, '../src/assets/sprites/sprite.png'),
-      css: path.resolve(__dirname, '../src/scss/utils/_sprite.scss')
+      image: path.resolve(__dirname, '../src/assets/sprites/sp_common.png'),
+      css: [[path.resolve(__dirname, '../src/scss/utils/_sp_common.scss') , {format: 'retinaOnly'}]]
     },
     apiOptions: {
-      cssImageRef: "~sprite.png"
+      cssImageRef: "~sp_common.png"
+    },
+    customTemplates: {
+      retinaOnly: require.resolve('./spriteTemplate/sass_retina.template.handlebars')
     }
   };
   
