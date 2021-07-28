@@ -1,0 +1,111 @@
+
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$ico_header_logo-name: 'ico_header_logo';
+$ico_header_logo-x: 0px;
+$ico_header_logo-y: 0px;
+$ico_header_logo-offset-x: 0px/2;
+$ico_header_logo-offset-y: 0px/2;
+$ico_header_logo-width: 120px/2;
+$ico_header_logo-height: 120px/2;
+$ico_header_logo-total-width: 184px/2;
+$ico_header_logo-total-height: 120px/2;
+$ico_header_logo-image: '~sp_common.png';
+$ico_header_logo: (0px/2, 0px/2, 0px/2, 0px/2, 120px/2, 120px/2, 184px/2, 120px/2, '~sp_common.png', 'ico_header_logo', );
+$ico_header_search-name: 'ico_header_search';
+$ico_header_search-x: 120px;
+$ico_header_search-y: 0px;
+$ico_header_search-offset-x: -120px/2;
+$ico_header_search-offset-y: 0px/2;
+$ico_header_search-width: 64px/2;
+$ico_header_search-height: 64px/2;
+$ico_header_search-total-width: 184px/2;
+$ico_header_search-total-height: 120px/2;
+$ico_header_search-image: '~sp_common.png';
+$ico_header_search: (120px/2, 0px/2, -120px/2, 0px/2, 64px/2, 64px/2, 184px/2, 120px/2, '~sp_common.png', 'ico_header_search', );
+$spritesheet-width: 184px/2;
+$spritesheet-height: 120px/2;
+$spritesheet-image: '~sp_common.png';
+$spritesheet-sprites: ($ico_header_logo, $ico_header_search, );
+$spritesheet: (184px/2, 120px/2, '~sp_common.png', $spritesheet-sprites, );
+
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite-size($sprite) {
+    background-size: $spritesheet-width $spritesheet-height;
+}  
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-size($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
