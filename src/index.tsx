@@ -1,15 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
 import './scss/global.scss';
 import reportWebVitals from './reportWebVitals';
-
-import Header from 'src/component/Header';
-import Home from 'src/page/Home';
-import PostMain from 'src/page/PostMain';
-import MyMain from 'src/page/MyMain'
-import MyBookmark from 'src/page/MyBookmark'
-import Footer from 'src/component/Footer';
 import Content from 'src/page/Content';
 
 ReactDOM.render(
