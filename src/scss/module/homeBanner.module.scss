@@ -1,0 +1,242 @@
+@charset "UTF-8";
+@import "../utils";
+
+.home_banner {
+    position: relative;
+    width: 919px;
+    margin: 0 auto;
+    padding: 0 118px;
+
+    .btn_banner {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &:before {
+            display: block;
+            content: '';
+        }
+
+        &.type_left{
+            left: 0;
+
+            &:before {
+                @include sprite($ico-banner-left);
+            }
+        }
+    
+        &.type_right{
+            right: 0;
+
+            &:before {
+                @include sprite($ico-banner-right);
+            }
+        }
+    }
+
+    @keyframes first_banner {
+        0% {
+            left:0;
+        }50% {
+            left:-875px;
+        }100% {
+            left:0;
+        }
+    }
+    @keyframes last_banner {
+        0% {
+            right:0;
+        }50% {
+            right:-875px;
+        }100% {
+            right:0;
+        }
+    }
+    
+    .banner_list {
+        position: relative;
+        height: 500px;
+        margin: 0 auto;
+    
+        .banner_item {
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 875px;
+            height: 500px;
+            padding: 52px 48px;
+            border-radius: 12px;
+            box-sizing: border-box;
+        
+            transition: z-index ease 0s 0.2s, transform ease 0.2s 0.2s;
+        
+            transform: scale(0.92);
+        
+            &:first-child {
+                left: 0;
+                background-color: #e32a78;
+                transform-origin: left center;
+        
+                &.is_active.animation {
+                    animation: first_banner 0.4s ease 0s backwards;
+                }
+            }
+        
+            &:last-child {
+                right: 0;
+                background-color: #6CFA94;
+                transform-origin: right center;
+        
+                &.is_active.animation {
+                    animation: last_banner 0.4s ease 0s backwards;
+                }
+            }
+        
+            &.is_active {
+                z-index: 1;
+                // height: 500px;
+        
+                transform: scale(1);
+            }
+        }
+    }
+    
+    .interview_area {
+        position: relative;
+        flex: 1 0 auto;
+        color: #fff;
+    
+        &:after {
+            @include sprite($ico-banner-interview-latte);
+            position: absolute;
+            right: 4px;
+            bottom: 0;
+            content: '';
+        }
+    
+        .date {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    
+        .title {
+            display: block;
+            margin-top: 8px;
+            font-weight: 800;
+            font-size: 32px;
+            line-height: 48px;
+            font-family: 'JetBrains Mono', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', Helvetica, sans-serif;
+        }
+    
+        .text {
+            margin-top: 16px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    
+        .hash_list {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: flex;
+        }
+    
+        .hash_item {
+            padding: 0 8px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 32px;
+            background-color: rgba($color: #171717, $alpha: 0.5);
+            border-radius: 4px;
+    
+            & + .hash_item {
+                margin-left: 13px;
+            }
+        }
+    
+        .info_wrap {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+        }
+    
+        .info {
+            width: 64px;
+            height: 64px;
+            padding: 6px 0;
+            box-sizing: border-box;
+    
+            &:before {
+                display: block;
+                margin: 0 auto;
+                content: '';
+            }
+    
+            &.type_like:before {
+                @include sprite($ico-banner-interview-like);
+            }
+    
+            &.type_book:before {
+                @include sprite($ico-banner-interview-book);
+            }
+    
+            .info_text {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 20px;
+                text-align: center;
+            }
+        }
+    }
+    
+    .request_area {
+        color: #171717;
+        text-align: center;
+    
+        .sub {
+            margin-top: 72px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    
+        .title {
+            display: block;
+            margin-top: 8px;
+            font-weight: 800;
+            font-size: 32px;
+            line-height: 48px;
+    
+            font-family: 'JetBrains Mono', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', Helvetica, sans-serif;
+        }
+    
+        .text {
+            margin-top: 16px;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    
+        .btn_request {
+            display: inline-block;
+            margin-top: 48px;
+            width: 334px;
+            margin-top: 56px;
+            background-color: #171717;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 48px;
+            color: #fff;
+            vertical-align: top;
+        }
+    }
+}

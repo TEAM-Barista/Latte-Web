@@ -1,0 +1,349 @@
+@charset "UTF-8";
+@import "../utils";
+
+.section_myMain {
+    position: relative;
+    padding: 64px 0 80px;
+    background-color: #242424;
+}
+
+.area_inner {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: 'JetBrains Mono', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #6CFA94;
+}
+
+.text {
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+}
+
+.profile_wrap {
+    display: flex;
+    margin-top: 24px;
+    padding: 32px 0 40px 8px;
+    border-bottom: 1px solid #3D3D3D;
+
+    .area_user_info {
+        flex: 1 1 auto;
+    }
+    // .user_info {
+
+    // }
+
+    .usesr_id {
+        display: inline-block;
+        font-family: 'JetBrains Mono', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 60px;
+        color: #FFF;
+        vertical-align: top;
+    }
+
+    .user_mail {
+        display: inline-block;
+        margin: 4px 0 0 16px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 56px;
+        color: #8B8B8B;
+        vertical-align: top;
+    }
+
+    .hash_list {
+        padding: 6px 0;
+    }
+
+    .hash_item {
+        display: inline-block;
+        padding: 0 12px;
+        background-color: #171717;
+        border-radius: 8px;
+        font-size: 16px;
+        line-height: 44px;
+        color: #FFF;
+
+        & + .hash_item {
+            margin-left: 8px;
+        }
+    }
+
+    .btn_edit {
+        display: block;
+        width: 216px;
+        margin-top: 44px;
+        border: 2px solid #fff;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 44px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+
+    .area_user_profle {
+        flex: 0 0 auto;
+        position: relative;
+    }
+
+    .profile_label {
+        @include sprite($ico_profile_edit);
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        cursor: pointer;
+    }
+
+    .profile_img {
+        width: 216px;
+        height: 216px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+.menu_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    padding-top: 32px;
+
+    .menu_item {
+        position: relative;
+        flex: 0 0 auto;
+        width: 570px;
+        height: 168px;
+        margin: 16px 10px;
+        padding-left: 40px;
+        background-color: #6CFA94;
+        border-radius: 12px;
+        box-sizing: border-box;
+
+        &:after {
+            @include sprite($ico_my_menu_arrow);
+            position: absolute;
+            top: 40px;
+            right: 44px;
+            content: '';
+        }
+
+        &:nth-child(1) {
+            background-color: #6CFA94;
+        }
+
+        &:nth-child(2) {
+            background-color: #F09DCD;
+        }
+
+        &:nth-child(3) {
+            background-color: #FFDB43;
+        }
+
+        &:nth-child(4) {
+            background-color: #AC92FF;
+        }
+    }
+
+    .menu_title {
+        padding-top: 32px;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 32px;
+        color: #242424;
+        font-family: 'JetBrains Mono', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', Helvetica, sans-serif;
+    }
+
+    .menu_text {
+        padding-top: 4px;
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 72px;
+
+        .new_badge {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 4px 0 0 4px;
+            border-radius: 50%;
+            background-color: #E83340;
+            vertical-align: top;
+            content: '';
+        }
+    }
+}
+
+.post_wrap {
+    padding-top: 64px;
+
+    .post_title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 32px;
+        color: #6CFA94;
+    }
+
+    .post_text {
+        margin-top: 4px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+        color: #FFF;
+        font-family: 'JetBrains Mono', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', Helvetica, sans-serif;
+    }
+
+    .post_list {
+        padding-top: 24px;
+    }
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .dimmed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba($color: #171717, $alpha: 0.8);
+    }
+}
+
+.modal_my_notice {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    width: 964px;
+    margin: 0 auto;
+    padding-bottom: 144px;
+    background-color: #3D3D3D;
+    border-radius: 12px;
+
+    .modal_header {
+        padding: 32px 64px;
+    }
+
+    .modal_title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 32px;
+        color: #6CFA94;
+    }
+
+    .modal_text {
+        margin-top: 4px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+        color: #FFF;
+        font-family: 'JetBrains Mono', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', Helvetica, sans-serif;
+    }
+
+    .notice_list {
+        max-height: 883px;
+        overflow: auto;
+    }
+
+    .notice_item {
+        position: relative;
+        display: flex;
+        padding: 0 64px;
+
+        &:before {
+            @include sprite($ico_modal_notice_item);
+            flex: 0 0 auto;
+            margin: 24px 24px 0 0;
+            content: '';
+        }
+
+        &.type_new {
+            background-color: #555;
+
+            &:after {
+                position: absolute;
+                top: 24px;
+                left: 64px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: #E83340;
+                content: '';
+            }
+        }
+    }
+
+    .notice_content {
+        height: 173px;
+        padding: 24px 0;
+        border-bottom: 1px solid #6F6F6F;
+        box-sizing: border-box;
+    }
+
+    .notice_title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 32px;
+        color: #FFF;
+    }
+
+    .notice_text {
+        @include ellipsisMulti(2,24);
+        font-size: 16px;
+        color: #FFF;
+    }
+
+    .notice_time {
+        margin-top: 24px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #A5A5A5;
+    }
+
+    .btn_wrap {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 48px;
+
+        .btn_more, .btn_close {
+            width: 330px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 44px;
+            color: #FFF;
+            text-align: center;
+        }
+
+        .btn_close {
+            background-color: #171717;
+            border: 2px solid #171717;
+        }
+
+        .btn_more {
+            margin-left: 20px;
+            border: 2px solid #fff;
+        }
+    }
+}

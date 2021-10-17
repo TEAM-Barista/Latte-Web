@@ -8,7 +8,7 @@ function Header() {
       <div className="skip_nav">
         <a href="#content">본문 바로가기</a>
       </div>
-      <header className={styles.header}>
+      <div className={styles.header}>
         <h1 className={styles.logo_wrap}><a href="#" className={styles.logo}>Latte</a></h1>
         <div className={styles.tab_wrap}>
           <a href="#" className={styles.tab_item} aria-selected="true" role="button">Home</a>
@@ -24,7 +24,7 @@ function Header() {
             </div>
           </a>
         </div>
-      </header>
+      </div>
     </>
   );
 }

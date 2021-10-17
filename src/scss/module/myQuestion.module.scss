@@ -1,0 +1,57 @@
+@charset "UTF-8";
+@import "../utils";
+
+.section_myQuestion {
+    padding-top: 64px;
+    background-color: #242424;
+}
+
+.area_inner {
+    width: 1147px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: 'JetBrains Mono', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFDB43;
+}
+
+.text {
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+}
+
+.tab_wrap {
+    padding-top: 36px;
+}
+
+.tab_item {
+    display: inline-block;
+    padding: 0 12px;
+    line-height: 40px;
+    vertical-align: top;
+    font-weight: 500;
+    font-size: 16px;
+    color: #8B8B8B;
+    border-radius: 8px;
+
+    & + .tab_item {
+        margin-left: 20px;
+    }
+
+    &[aria-selected="true"] {
+        color: #242424;
+        background-color: #F09DCD;
+    }
+}
+
+.post_wrap {
+    padding-top: 12px;
+}

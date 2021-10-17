@@ -1,15 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './scss/global.scss';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Header from './header/Header';
+import Header from 'src/component/Header';
+import Home from 'src/page/Home';
+import PostMain from 'src/page/PostMain';
+import MyMain from 'src/page/MyMain'
+import MyBookmark from 'src/page/MyBookmark'
+import Footer from 'src/component/Footer';
+import Content from 'src/page/Content';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <App />
+    <div className="wrap">
+      <Content />
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
