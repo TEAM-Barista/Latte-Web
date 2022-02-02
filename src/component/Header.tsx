@@ -18,7 +18,7 @@ function Header(props: headerType) {
 				<header className={styles.header}>
 					<h1 className={styles.logo_wrap}>
 						<Link to="/" className={styles.logo}>
-							Latte
+							Router
 						</Link>
 					</h1>
 					<div className={styles.tab_wrap}>
