@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@import "../utils";
+
+.interview_item {
+	position: relative;
+	width: 310px;
+	height: 436px;
+	padding: 32px;
+	background: #e32a78;
+	border-radius: 12px;
+
+	&:nth-of-type(1n) {
+		background: #e32a78;
+	}
+	&:nth-of-type(2n) {
+		background: #182ae5;
+	}
+	&:nth-of-type(3n) {
+		background: #6255f1;
+	}
+	& :nth-of-type(4n) {
+		background: #182ae5;
+	}
+	& :nth-of-type(5n) {
+		background: #4cd9ff;
+	}
+	& :nth-of-type(6n) {
+		background: #ffdb43;
+	}
+	& :nth-of-type(7n) {
+		background: #f09dcd;
+	}
+	& :nth-of-type(8n) {
+		background: #182ae5;
+	}
+	& :nth-of-type(9n) {
+		background: #ac92ff;
+	}
+	& :nth-of-type(10n) {
+		background: #6cfa94;
+	}
+
+	.area_interview_link {
+		display: flex;
+	}
+
+	.interview_content_wrap {
+		flex: 1 1 auto;
+	}
+
+	.hash_wrap {
+		position: absolute;
+		bottom: 32px;
+		background: transparent;
+	}
+
+	.hash_item {
+		display: inline-block;
+		padding: 0 8px;
+		line-height: 32px;
+		background-color: rgba(23, 23, 23, 0.5);
+		font-size: 12px;
+		color: #fff;
+		vertical-align: top;
+		border-radius: 4px;
+
+		& + .hash_item {
+			margin-left: 8px;
+		}
+	}
+
+	.interview_title {
+		margin-top: 8px;
+		margin-bottom: 8px;
+		font-weight: 800;
+		font-size: 20px;
+		line-height: 32px;
+		color: #fff;
+	}
+
+	.interview_text {
+		@include ellipsisMulti(2, 24);
+		font-size: 16px;
+		color: #fbfbfb;
+	}
+
+	.star_img {
+		position: absolute;
+		right: 0;
+		@include sprite($ico-interview_star);
+	}
+
+	.area_interview_btn {
+		position: relative;
+		padding: 8px 0;
+		margin: 8px 0 0 -8px;
+		font-size: 16px;
+		line-height: 48px;
+		color: #fff;
+
+		.btn_item {
+			margin-left: 16px;
+
+			&:before {
+				display: inline-block;
+				margin: 12px 8px 0 0;
+				vertical-align: top;
+				content: "";
+			}
+
+			&.type_bookmark {
+				&:before {
+					@include sprite($ico-post-bookmark);
+				}
+
+				&[aria-pressed="true"]:before {
+					@include sprite($ico-post-bookmark-on);
+				}
+			}
+
+			&.type_like:before {
+				@include sprite($ico-interview_like);
+			}
+		}
+	}
+}

@@ -1,0 +1,112 @@
+@charset "UTF-8";
+@import "../utils";
+
+.section_postMain {
+	padding-top: 64px;
+	background-color: #242424;
+}
+
+.area_inner {
+	width: 1147px;
+	margin: 0 auto;
+}
+
+.title,
+.sub_title {
+	font-family: "JetBrains Mono", "Noto Sans", -apple-system, BlinkMacSystemFont,
+		"Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, "돋움",
+		Helvetica, sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 32px;
+	color: #f09dcd;
+}
+
+.text {
+	margin-top: 4px;
+	font-family: "JetBrains Mono", "Noto Sans", -apple-system, BlinkMacSystemFont,
+		"Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, "돋움",
+		Helvetica, sans-serif;
+	font-weight: 600;
+	font-size: 48px;
+	line-height: 72px;
+	color: #ffffff;
+}
+
+.main_wrap {
+	padding-bottom: 24px;
+}
+
+.sub_wrap {
+	padding-top: 36px;
+}
+
+.sub_text {
+	margin-top: 4px;
+	font-family: "JetBrains Mono", "Noto Sans", -apple-system, BlinkMacSystemFont,
+		"Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, "돋움",
+		Helvetica, sans-serif;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 48px;
+	color: #ffffff;
+}
+
+.interview_wrap {
+	padding-top: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	flex-direction: column;
+	grid-gap: 20px;
+}
+
+.interview_item {
+	position: relative;
+	width: 310px;
+	height: 436px;
+	padding: 32px;
+	background: #3d3d3d;
+	border-radius: 12px;
+	text-align: center;
+
+	.interview_content_wrap {
+		flex: 1 1 auto;
+	}
+
+	.hash_wrap {
+		position: absolute;
+		bottom: 32px;
+	}
+
+	.interview_request {
+		position: absolute;
+		left: 32px;
+		bottom: 32px;
+		display: inline-block;
+		width: 310px;
+		padding: 6px 0 8px;
+		background-color: rgba(23, 23, 23, 0.5);
+		font-size: 12px;
+		color: #fff;
+		border-radius: 4px;
+		&.interview_text {
+			font-size: 20px;
+			line-height: 32px;
+		}
+	}
+
+	.interview_title {
+		margin-top: 8px;
+		margin-bottom: 8px;
+		font-weight: 800;
+		font-size: 20px;
+		line-height: 32px;
+		color: #fff;
+	}
+
+	.interview_text {
+		@include ellipsisMulti(2, 24);
+		font-size: 16px;
+		color: #fbfbfb;
+	}
+}
