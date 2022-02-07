@@ -30,7 +30,7 @@ function Interview(props: interview) {
 				</div>
 
 				<div className={styles.interview_wrap}>
-					<InterviewItem />
+					<InterviewItem isThisWeek={true} />
 					<div className={styles.interview_item}>
 						<div className={styles.interview_content_wrap}>
 							<p className={styles.interview_text}>Request</p>
@@ -47,7 +47,7 @@ function Interview(props: interview) {
 				</div>
 
 				<div className={styles.sub_wrap}>
-					<div className={styles.sub_title}>Past Week</div>
+					<div className={styles.sub_title}>Next Week</div>
 					<p className={styles.sub_text}>
 						Let's watch the past interviews again!
 					</p>

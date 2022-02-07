@@ -30,14 +30,14 @@ function Header(props: headerType) {
 						>
 							Home
 						</Link>
-						<a
-							href="/interview"
+						<Link
+							to="/interview"
 							className={styles.tab_item}
 							aria-selected={props.idx === 1 ? "true" : "false"}
 							role="button"
 						>
 							Interview
-						</a>
+						</Link>
 						<Link
 							to="/post"
 							className={styles.tab_item}

@@ -10,6 +10,7 @@ import MyQuestion from "src/page/MyQuestion";
 import MyAnswer from "src/page/MyAnswer";
 import Footer from "src/component/Footer";
 import Interview from "src/page/Interview";
+import InterviewDetail from "src/page/InterviewDetail";
 import PostDetail from "src/page/PostDetail";
 
 type State = {
@@ -44,8 +45,8 @@ const HeaderReducer = (state: State, action: HeaderAction) => {
 };
 
 function Content() {
-	const [headerType, setHeaderType] = useState("main");
-	const [tabIdx, setTabIdx] = useState(0);
+	const [headerType, setHeaderType] = useState<string>("main");
+	const [tabIdx, setTabIdx] = useState<number>(0);
 
 	const [headerInfo, dispatchHeader] = useReducer(
 		HeaderReducer,
@@ -61,6 +62,13 @@ function Content() {
 					path="/interview"
 					render={(props) => (
 						<Interview dispatchHeader={dispatchHeader} {...props} />
+					)}
+				/>
+				<Route
+					exact
+					path="/interview/detail"
+					render={(props) => (
+						<InterviewDetail dispatchHeader={dispatchHeader} {...props} />
 					)}
 				/>
 				<Route
